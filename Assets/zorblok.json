@@ -1,0 +1,70 @@
+{
+    "0": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "./sound/radio_music.mp3",
+                "isBlocking": true,
+                "transformObject": "front"
+            },
+            {
+                "isRepeat": false,
+                "fileLoc": "./sound/interference.mp3",
+                "isBlocking": true,
+                "transformObject": "front"
+            },
+            {
+                "isRepeat": false,
+                "fileLoc": "./voiceline/ZORBLOK_1.mp3",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "yes": "1",
+            "no": "2"
+        }
+    },
+    "1": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "./voiceline/good.mp3",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "goto": 3
+    },
+    "2": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "./voiceline/thats_alright.mp3",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "goto": 3
+    },
+    "3": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "./sound/engine.mp3",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ]
+    },
+    "99": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "./sound/engine.mp3",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ]
+    }
+}
