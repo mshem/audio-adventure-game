@@ -397,3 +397,10 @@
 /Users/michaelshemesh/Documents/audio-adventure-game/obj/Debug/Bose.Wearable.Editor.csproj.CopyComplete
 /Users/michaelshemesh/Documents/audio-adventure-game/obj/Debug/Bose.Wearable.Editor.dll
 /Users/michaelshemesh/Documents/audio-adventure-game/obj/Debug/Bose.Wearable.Editor.pdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.Editor.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Nustache.Core.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.pdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.Editor.pdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.Editor.dll.mdb

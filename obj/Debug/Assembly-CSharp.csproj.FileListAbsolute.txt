@@ -363,3 +363,9 @@
 /Users/michaelshemesh/Documents/audio-adventure-game/obj/Debug/Assembly-CSharp.csproj.CopyComplete
 /Users/michaelshemesh/Documents/audio-adventure-game/obj/Debug/Assembly-CSharp.dll
 /Users/michaelshemesh/Documents/audio-adventure-game/obj/Debug/Assembly-CSharp.pdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UniRx.pdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UniRx.Async.pdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UniRx.Async.Editor.pdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.pdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.dll.mdb
