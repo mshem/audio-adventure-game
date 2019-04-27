@@ -724,6 +724,18 @@
       <Project>{A24BACFA-FC03-B067-0042-3887323ADA43}</Project>
       <Name>Bose.Wearable.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="UniRx.csproj">
+      <Project>{7D80D052-E728-403B-9488-A2F4C01C0B7E}</Project>
+      <Name>UniRx</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.Async.csproj">
+      <Project>{D2D89674-3C43-4831-F16A-D8D19AA2B4BE}</Project>
+      <Name>UniRx.Async</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.Async.Editor.csproj">
+      <Project>{971D1930-B909-9FAE-A220-9CD912CF5B79}</Project>
+      <Name>UniRx.Async.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
