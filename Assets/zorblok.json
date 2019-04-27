@@ -3,19 +3,13 @@
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "./sound/radio_music.mp3",
+                "fileLoc": "intro-music",
                 "isBlocking": true,
-                "transformObject": "front"
+                "transformObject": "FRONT"
             },
             {
                 "isRepeat": false,
-                "fileLoc": "./sound/interference.mp3",
-                "isBlocking": true,
-                "transformObject": "front"
-            },
-            {
-                "isRepeat": false,
-                "fileLoc": "./voiceline/ZORBLOK_1.mp3",
+                "fileLoc": "zorblok-dialog/01-intro",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using System.IO;
+using Newtonsoft.Json;
 
 public enum MyState 
 {
@@ -40,11 +41,10 @@ public class GameManager : MonoBehaviour
         using (StreamReader r = new StreamReader("Assets/zorblok.json"))
         {
             string jsonString = r.ReadToEnd();
-            Stories = JsonUtility.FromJson<Dictionary<int, CurrentEvent>>(jsonString);
+            Stories = JsonConvert.DeserializeObject<Dictionary<int, CurrentEvent>>(jsonString);
+            //Stories = JsonUtility.FromJson<>(jsonString);
         }
-        //var 
         currentPassage = Stories[firstPassage];
-
         myState.Subscribe(state =>
         {
             switch (state)
@@ -53,17 +53,15 @@ public class GameManager : MonoBehaviour
                     //Do nothing
                     break;
                 case MyState.TriggerAlienDialog:
-                    //fetch current state
-                    //trigger soudQueueCoroutinen w/ current state (within here it will add to sound queue or trigger playerawaitactionstate
-                    //set MyState.DoNothing 
-                    StartCoroutine(TriggerStoryEvent()); 
+                    StartCoroutine(TriggerStoryEvent());
+                    myState.OnNext(MyState.DoNothing); 
                     break;
                 case MyState.TriggerPlayerAwaitAction:
                     Debug.Log("waiting for player");
                     break;
             }
         });
-        myState.Publish(MyState.TriggerAlienDialog);
+        myState.OnNext(MyState.TriggerAlienDialog);
     }
 
     IEnumerator TriggerStoryEvent()
@@ -73,20 +71,21 @@ public class GameManager : MonoBehaviour
         while (soundQ.Count > 0)
         {
             var currentSound = soundQ.Dequeue();
-            var soundLoc = currentSound.FileLoc;
+            var soundLoc = "Audio/" + currentSound.FileLoc;
+            var audioClip = Resources.Load<AudioClip>(soundLoc);
             var obj = GameObject.Find(currentSound.TransformObject);
             var obj1 = obj.GetComponent<AudioSource>();
-            obj1.clip = Resources.Load<AudioClip>(soundLoc);
+            obj1.clip = audioClip;
             obj1.Play();
             yield return new WaitForSeconds(obj1.clip.length);
         }
         if(currentPassage.Goto != null) 
         {
-            this.currentPassage = this.Stories[currentPassage.Goto.Value];
+            currentPassage = Stories[currentPassage.Goto.Value];
         }
         else 
         {
-            this.myState.Publish(MyState.TriggerPlayerAwaitAction);
+            myState.OnNext(MyState.TriggerPlayerAwaitAction);
         }
     }
 }
