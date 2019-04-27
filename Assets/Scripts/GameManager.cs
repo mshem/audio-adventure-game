@@ -40,12 +40,14 @@ public class GameManager : MonoBehaviour
     {
         inputController = FindObjectOfType<InputController>();
         //jsonutil load file
-        using (StreamReader r = new StreamReader("Assets/zorblok.json"))
-        {
-            string jsonString = r.ReadToEnd();
+
+        //using (StreamReader r = new StreamReader("Assets/Resources/zorblok.json"))
+        //{
+        //string jsonString = r.ReadToEnd();
+        string jsonString = (Resources.Load("zorblok") as TextAsset).text;
             Stories = JsonConvert.DeserializeObject<Dictionary<int, CurrentEvent>>(jsonString);
             //Stories = JsonUtility.FromJson<>(jsonString);
-        }
+        //}
         currentPassage = Stories[firstPassage];
 
         Observable.EveryUpdate()
