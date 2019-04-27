@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio for Mac
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bose.Wearable", "Bose.Wearable.csproj", "{7AEFCDED-9C7E-3325-06E6-03601697B4DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{72B4CE79-CE3D-3248-164A-D0FB9BDA19ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bose.Wearable.Editor", "Bose.Wearable.Editor.csproj", "{A24BACFA-FC03-B067-0042-3887323ADA43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bose.Wearable.Proxy.Tests", "Bose.Wearable.Proxy.Tests.csproj", "{6EAC3A42-B646-1A4C-0F68-3614EBDAA543}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bose.Wearable.Connection.Editor", "Bose.Wearable.Connection.Editor.csproj", "{1CFFAAE8-8C32-A214-A636-E424222ACCC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{8EB92684-FBB3-F652-C363-F0B13ED1388B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AEFCDED-9C7E-3325-06E6-03601697B4DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AEFCDED-9C7E-3325-06E6-03601697B4DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AEFCDED-9C7E-3325-06E6-03601697B4DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AEFCDED-9C7E-3325-06E6-03601697B4DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B4CE79-CE3D-3248-164A-D0FB9BDA19ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B4CE79-CE3D-3248-164A-D0FB9BDA19ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B4CE79-CE3D-3248-164A-D0FB9BDA19ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B4CE79-CE3D-3248-164A-D0FB9BDA19ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A24BACFA-FC03-B067-0042-3887323ADA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A24BACFA-FC03-B067-0042-3887323ADA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A24BACFA-FC03-B067-0042-3887323ADA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A24BACFA-FC03-B067-0042-3887323ADA43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EAC3A42-B646-1A4C-0F68-3614EBDAA543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EAC3A42-B646-1A4C-0F68-3614EBDAA543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EAC3A42-B646-1A4C-0F68-3614EBDAA543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EAC3A42-B646-1A4C-0F68-3614EBDAA543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CFFAAE8-8C32-A214-A636-E424222ACCC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CFFAAE8-8C32-A214-A636-E424222ACCC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CFFAAE8-8C32-A214-A636-E424222ACCC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CFFAAE8-8C32-A214-A636-E424222ACCC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB92684-FBB3-F652-C363-F0B13ED1388B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB92684-FBB3-F652-C363-F0B13ED1388B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB92684-FBB3-F652-C363-F0B13ED1388B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB92684-FBB3-F652-C363-F0B13ED1388B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
