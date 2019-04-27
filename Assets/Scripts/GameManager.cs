@@ -16,7 +16,7 @@ public class CurrentEvent
 {
     public Queue<SoundQueue> SoundQueue;
     public int? Goto;
-    public KeyValuePair<bool, int> Decision;
+    public Dictionary<string, int> Decision;
 }
 
 public class SoundQueue
@@ -29,6 +29,7 @@ public class SoundQueue
 
 public class GameManager : MonoBehaviour
 {
+    public InputController inputController;
     int firstPassage = 0;
     Dictionary<int, CurrentEvent> Stories;
     CurrentEvent currentPassage;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        inputController = FindObjectOfType<InputController>();
         //jsonutil load file
         using (StreamReader r = new StreamReader("Assets/zorblok.json"))
         {
@@ -45,6 +47,17 @@ public class GameManager : MonoBehaviour
             //Stories = JsonUtility.FromJson<>(jsonString);
         }
         currentPassage = Stories[firstPassage];
+
+        Observable.EveryUpdate()
+        .Where((e) => Bose.Wearable.WearableConnectUIPanel.isDeviceConnected)
+        .First()
+        .Subscribe(_ => RunLoop());
+
+    }
+
+    void RunLoop()
+    {
+        Debug.Log("Starting loop");
         myState.Subscribe(state =>
         {
             switch (state)
@@ -54,14 +67,27 @@ public class GameManager : MonoBehaviour
                     break;
                 case MyState.TriggerAlienDialog:
                     StartCoroutine(TriggerStoryEvent());
-                    myState.OnNext(MyState.DoNothing); 
+                    myState.OnNext(MyState.DoNothing);
                     break;
                 case MyState.TriggerPlayerAwaitAction:
                     Debug.Log("waiting for player");
+                    inputController.playerResponseState.Where(e => e == InputController.InputState.Yes || e == InputController.InputState.Yes)
+                    .First()
+                    .Subscribe(e => {
+                        var d = e == InputController.InputState.Yes ? "yes" : "no";
+                        var id = currentPassage.Decision[d];
+                        currentPassage = Stories[id];
+                        myState.OnNext(MyState.TriggerAlienDialog);
+                    });
                     break;
             }
         });
         myState.OnNext(MyState.TriggerAlienDialog);
+    }
+
+    private void Update()
+    {
+
     }
 
     IEnumerator TriggerStoryEvent()

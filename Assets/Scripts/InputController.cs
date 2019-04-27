@@ -5,14 +5,22 @@ using System;
 
 public class InputController : MonoBehaviour
 {
-    EventHandler BoseWearableEventHandler; 
+    EventHandler BoseWearableEventHandler;
+
+    public enum InputState
+    {
+        Yes,
+        No
+    }
+
+    public Subject<InputState> playerResponseState = new Subject<InputState>();
 
     // Use this for initialization
     void Start()
     {
         Bose.Wearable.WearableControl.Instance.HeadNodGesture.Enable();
         Bose.Wearable.WearableControl.Instance.HeadShakeGesture.Enable();
-        //BoseWearableEventHandler += Bose.Wearable.WearableControl.Instance.DoubleTapDetected;
+        //BoseWearableEventHandler. Bose.Wearable.WearableControl.Instance.DoubleTapDetected;
 
     }
 
@@ -34,11 +42,13 @@ public class InputController : MonoBehaviour
 
     public void Yes()
     {
-
+        Debug.Log("Yes");
+        playerResponseState.OnNext(InputState.Yes);
     }
 
     public void No()
     {
-
+        Debug.Log("No");
+        playerResponseState.OnNext(InputState.No);
     }
 }

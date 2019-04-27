@@ -1,23 +1,29 @@
 ﻿<Properties StartupConfiguration="{72B4CE79-CE3D-3248-164A-D0FB9BDA19ED}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Bose/Wearable/Examples/ContentDemos/Gesture/Scripts/GestureIconFactory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/EasyTTSUtil.cs" Line="20" Column="5" />
-      <File FileName="Assets/Scripts/MainController.cs" Line="20" Column="31" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="34" Column="29" />
+      <File FileName="Assets/Scripts/EasyTTSUtil.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="75" Column="38" />
       <File FileName="Assets/Scripts/RedWhenPlaying.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/RotationGet.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/ShootRay.cs" Line="1" Column="1" />
       <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Gesture/Scripts/GestureDisplay.cs" Line="57" Column="17" />
-      <File FileName="Assets/Scripts/InputController.cs" Line="15" Column="93" />
-      <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Gesture/Scripts/GestureDemoUIPanel.cs" Line="78" Column="42" />
-      <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Gesture/Scripts/GestureIconFactory.cs" Line="10" Column="2" />
+      <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Gesture/Scripts/GestureDemoUIPanel.cs" Line="64" Column="6" />
+      <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Gesture/Scripts/GestureIconFactory.cs" Line="85" Column="1" />
+      <File FileName="Assets/Scripts/InputController.cs" Line="25" Column="6" />
+      <File FileName="Assets/Bose/Wearable/Connection/Scripts/Connection/WearableConnectUIPanel.cs" Line="327" Column="30" />
+      <File FileName="Assets/Bose/Wearable/Scripts/Providers/WearableMobileProvider.cs" Line="128" Column="1" />
+      <File FileName="Assets/Cradle/README.md" Line="20" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="6" column="22" />
+      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="101" column="52" />
+      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="75" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

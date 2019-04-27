@@ -393,3 +393,5 @@
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.dll.mdb
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.Editor.pdb
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.Editor.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Newtonsoft.Json.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Newtonsoft.Json.xml

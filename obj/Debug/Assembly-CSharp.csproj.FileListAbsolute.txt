@@ -199,7 +199,6 @@
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/ExCSS.Unity.dll
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.Legacy.NRefactory.dll
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.UNetWeaver.dll
-/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Boo.Lang.dll
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UnityEditor.UI.dll
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.IvyParser.dll
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.CecilTools.dll
@@ -369,3 +368,6 @@
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UniRx.Async.Editor.pdb
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.pdb
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Newtonsoft.Json.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Newtonsoft.Json.xml
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Boo.Lang.dll
