@@ -23,7 +23,7 @@
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "./voiceline/good.mp3",
+                "fileLoc": "zorblok-dialog/02-yes-after-intro.wav",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             }
@@ -34,7 +34,7 @@
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "./voiceline/thats_alright.mp3",
+                "fileLoc": "zorblok-dialog/03-no-after-intro.wav",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             }
@@ -45,20 +45,370 @@
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "./sound/engine.mp3",
+                "fileLoc": "zorblok-dialog/04-zorblock.wav",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             }
-        ]
+        ],
+        "decision":{
+            "left":"4",
+            "right":"5"
+        }
     },
-    "99": {
+    "4": {
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "./sound/engine.mp3",
+                "fileLoc": "zorblok-dialog/06-left-brenda-left-me.wav",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             }
-        ]
+        ],
+        "goto": 6
+    },
+    "5": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/05-right-brenda-left-me.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "goto": 6
+    },
+    "6": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/07-brenda-left-me.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "yes": "7",
+            "no": "8"
+        }
+    },
+    "7": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/08-yes-zorblock-threatens.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "goto": 9
+    },
+    "8": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/09-no-zorblock-threatens.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "goto": 9
+    },
+    "9": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/10-zorblock-threatens.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "yes": "10",
+            "no": "11"
+        }
+    },
+    "10": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/11-yes-zorblock-eats.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 12
+    },
+    "11": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/12-no-zorblock-eats.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 12
+    },
+    "12": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/13-zorblock-sees-a-shortcut.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "left": "13",
+            "right": "14"
+        }
+    },
+    "13": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/14-left-at-shortcut.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 15
+    },
+    "14": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/15-right-at-shortcut.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 15
+    },
+    "15": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/16-stuck-in-traffic.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "yes": "16",
+            "no": "17"
+        }
+    },
+    "16": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/17-yes-after-traffic.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 18
+    },
+    "17": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/18-no-after-traffic.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 18
+    },
+    "18": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/19-pick-up-the-pace.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "yes": "19",
+            "no": "20"
+        }
+    },
+    "19": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/19-yes-hyperdrive.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 21
+    },
+    "20": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/20-no-play-it-safe.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 21
+    },
+    "21": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/21-getting-close.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "left": "22",
+            "right": "23"
+        }
+    },
+    "22": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/23-left-after-getting-close.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 24
+    },
+    "23": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/22-right-after-getting-close.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 24
+    },
+    "24": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/zorblock-comes-clean.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "yes": "25",
+            "no": "31"
+        }
+    },
+    "25": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/24-yes-towards-conclusion.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "left": "26",
+            "right": "27"
+        }
+    },
+    "26": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/25-left-towards-Brenda.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "yes": "28",
+            "no": "29"
+        }
+    },
+    "27": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "missing",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], 
+        "decision": {
+            "left": "26",
+            "right": "27"
+        }
+    },
+    "28": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "missing",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            }
+        ],
+        "decision": {
+            "yes": "28",
+            "no": "29"
+        }
+    },
+    "29": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/26-conclude-with-brenda.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 30
+    },
+    "30": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "outro-music.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 50
+    },
+    "31": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "missing",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], 
+        "decision": {
+            "left": "32",
+            "right": "33"
+        }
+    },
+    "32": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], 
+        "decision": {
+            "left": "32",
+            "right": "33"
+        }
+    },
+    "33": {
+        "soundQueue": [
+            {
+                "isRepeat": false,
+                "fileLoc": "zorblok-dialog/28-conclude-with-Zahara.wav",
+                "isBlocking": true,
+                "transformObject": "ZORBLOK"
+            } 
+        ], "goto": 30
     }
 }
