@@ -69,6 +69,8 @@ namespace Bose.Wearable
 		[SerializeField]
 		private bool _showOnStart;
 
+        public static bool isDeviceConnected;
+
 		private Coroutine _checkForPermissionsAndTrySearchCoroutine;
 
 		private Action _onClose;
@@ -325,9 +327,11 @@ namespace Bose.Wearable
 			if (DeviceConnectSuccess != null)
 			{
 				DeviceConnectSuccess();
-			}
+                isDeviceConnected = true;
+                Debug.Log("device connected");
+            }
 
-			ToggleLockScreen(true);
+            ToggleLockScreen(true);
 		}
 
 		private void OnDeviceConnectFailure()
@@ -335,9 +339,10 @@ namespace Bose.Wearable
 			if (DeviceConnectFailure != null)
 			{
 				DeviceConnectFailure();
-			}
+                isDeviceConnected = false;
+            }
 
-			ToggleLockScreen(true);
+            ToggleLockScreen(true);
 		}
 
 		#endregion

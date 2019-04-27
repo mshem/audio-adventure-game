@@ -70,11 +70,12 @@
     <Compile Include="Assets\EasyTTS\EasyTTSDemo\DemoEasyTTS_SelectEngine.cs" />
     <Compile Include="Assets\Scripts\EasyTTSUtil.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\MainController.cs" />
+    <Compile Include="Assets\Scripts\InputController.cs" />
     <Compile Include="Assets\Scripts\RedWhenPlaying.cs" />
     <Compile Include="Assets\Scripts\RotationGet.cs" />
     <Compile Include="Assets\Scripts\ShootRay.cs" />
     <None Include="Assets\EasyTTS\EasyTTSReadMe.txt" />
+    <None Include="Assets\JsonDotNet\link.xml" />
     <None Include="Assets\EasyTTS\EasyTTSReadMeForJP.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/michaelshemesh/Documents/audio-adventure-game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -291,6 +292,9 @@
     </Reference>
     <Reference Include="Cradle">
       <HintPath>/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Cradle/Cradle.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>/Users/michaelshemesh/Documents/audio-adventure-game/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>/Users/michaelshemesh/Documents/audio-adventure-game/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
@@ -648,6 +652,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="UniRx.csproj">
+      <Project>{7D80D052-E728-403B-9488-A2F4C01C0B7E}</Project>
+      <Name>UniRx</Name>
+    </ProjectReference>
     <ProjectReference Include="Bose.Wearable.Connection.Editor.csproj">
       <Project>{1CFFAAE8-8C32-A214-A636-E424222ACCC3}</Project>
       <Name>Bose.Wearable.Connection.Editor</Name>
@@ -656,14 +664,6 @@
       <Project>{7AEFCDED-9C7E-3325-06E6-03601697B4DA}</Project>
       <Name>Bose.Wearable</Name>
     </ProjectReference>
-    <ProjectReference Include="Bose.Wearable.Editor.csproj">
-      <Project>{A24BACFA-FC03-B067-0042-3887323ADA43}</Project>
-      <Name>Bose.Wearable.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniRx.csproj">
-      <Project>{7D80D052-E728-403B-9488-A2F4C01C0B7E}</Project>
-      <Name>UniRx</Name>
-    </ProjectReference>
     <ProjectReference Include="UniRx.Async.csproj">
       <Project>{D2D89674-3C43-4831-F16A-D8D19AA2B4BE}</Project>
       <Name>UniRx.Async</Name>
@@ -671,6 +671,10 @@
     <ProjectReference Include="UniRx.Async.Editor.csproj">
       <Project>{971D1930-B909-9FAE-A220-9CD912CF5B79}</Project>
       <Name>UniRx.Async.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Bose.Wearable.Editor.csproj">
+      <Project>{A24BACFA-FC03-B067-0042-3887323ADA43}</Project>
+      <Name>Bose.Wearable.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
