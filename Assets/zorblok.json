@@ -329,7 +329,7 @@
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "missing",
+                "fileLoc": "zorblok-dialog/no-we-need-a-left.wav",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             } 
@@ -343,7 +343,7 @@
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "missing",
+                "fileLoc": "zorblok-dialog/stop-this-thing.wav",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             }
@@ -371,13 +371,13 @@
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             } 
-        ], "goto": 50
+        ]
     },
     "31": {
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "missing",
+                "fileLoc": "zorblok-dialog/26-no-towards-conclusion.wav",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             } 
@@ -391,7 +391,7 @@
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "",
+                "fileLoc": "zorblok-dialog/we-need-to-make-a-right-towards-zahara.wav",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             } 
