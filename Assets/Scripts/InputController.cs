@@ -10,7 +10,9 @@ public class InputController : MonoBehaviour
     public enum InputState
     {
         Yes,
-        No
+        No,
+        Left,
+        Right
     }
 
     public Subject<InputState> playerResponseState = new Subject<InputState>();
@@ -32,12 +34,14 @@ public class InputController : MonoBehaviour
 
     public void Left()
     {
-     
+        Debug.Log("Left");
+        playerResponseState.OnNext(InputState.Left);
     }
 
     public void Right()
     {
-
+        Debug.Log("Right");
+        playerResponseState.OnNext(InputState.Right);
     }
 
     public void Yes()
