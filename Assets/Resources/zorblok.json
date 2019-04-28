@@ -50,13 +50,14 @@
         "isRepeat": false,
         "fileLoc": "spaceship-starts",
         "isBlocking": true,
+        "volume": 1,
         "transformObject": "BACKGROUND"
       },
       {
         "isRepeat": true,
         "fileLoc": "spaceship-running",
         "isBlocking": false,
-        "volume": "0.05",
+        "volume": 0.1,
         "transformObject": "BACKGROUND"
       },
       {
@@ -194,13 +195,14 @@
         "isRepeat": false,
         "fileLoc": "spaceship-starts",
         "isBlocking": true,
+        "volume": 1,
         "transformObject": "BACKGROUND"
       },
       {
         "isRepeat": true,
         "fileLoc": "spaceship-running",
         "isBlocking": false,
-        "volume": "0.05",
+        "volume": 0.1,
         "transformObject": "BACKGROUND"
       },
       {
@@ -243,6 +245,7 @@
         "isRepeat": false,
         "fileLoc": "engine-stops",
         "isBlocking": true,
+        "volume": 1,
         "transformObject": "BACKGROUND"
       },
       {
@@ -288,13 +291,14 @@
         "isRepeat": false,
         "fileLoc": "spaceship-starts",
         "isBlocking": true,
+        "volume": 1,
         "transformObject": "BACKGROUND"
       },
       {
         "isRepeat": true,
         "fileLoc": "spaceship-running",
         "isBlocking": false,
-        "volume": "0.05",
+        "volume": 0.1,
         "transformObject": "BACKGROUND"
       },
       {
@@ -443,6 +447,7 @@
         "isRepeat": false,
         "fileLoc": "engine-stops",
         "isBlocking": true,
+        "volume": 1,
         "transformObject": "BACKGROUND"
       },
       {
@@ -498,6 +503,7 @@
         "isRepeat": false,
         "fileLoc": "engine-stops",
         "isBlocking": true,
+        "volume": 1,
         "transformObject": "BACKGROUND"
       },
       {

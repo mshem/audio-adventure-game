@@ -7,11 +7,11 @@ using Newtonsoft.Json;
 using System;
 using System.Linq;
 
-public enum MyState 
+public enum MyState
 {
     DoNothing,
     TriggerAlienDialog,
-    TriggerPlayerAwaitAction  
+    TriggerPlayerAwaitAction
 }
 
 public class CurrentEvent
@@ -32,7 +32,7 @@ public class SoundQueue
 
 public class GameManager : MonoBehaviour
 {
-    public  int firstPassage = 0;
+    public int firstPassage = 0;
     public InputController inputController;
     Dictionary<int, CurrentEvent> Stories;
     CurrentEvent currentPassage;
@@ -51,8 +51,8 @@ public class GameManager : MonoBehaviour
         //{
         //string jsonString = r.ReadToEnd();
         string jsonString = (Resources.Load("zorblok") as TextAsset).text;
-            Stories = JsonConvert.DeserializeObject<Dictionary<int, CurrentEvent>>(jsonString);
-            //Stories = JsonUtility.FromJson<>(jsonString);
+        Stories = JsonConvert.DeserializeObject<Dictionary<int, CurrentEvent>>(jsonString);
+        //Stories = JsonUtility.FromJson<>(jsonString);
         //}
         currentPassage = Stories[firstPassage];
 
@@ -68,7 +68,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Starting loop");
         Bose.Wearable.RotationMatcher matcher = GameObject.FindObjectOfType<Bose.Wearable.RotationMatcher>();
         Bose.Wearable.WearableControl control = GameObject.FindObjectOfType<Bose.Wearable.WearableControl>();
-        matcher.SetRelativeReference(control.LastSensorFrame.rotation);
+        //myState.First().Subscribe(state => {
+        //    matcher.SetRelativeReference(control.LastSensorFrame.rotation);
+        //});
 
         myState.Subscribe(state =>
         {
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
                     //Do nothing
                     break;
                 case MyState.TriggerAlienDialog:
+                    matcher.SetRelativeReference(control.LastSensorFrame.rotation);
                     StartCoroutine(TriggerStoryEvent());
                     myState.OnNext(MyState.DoNothing);
                     break;
@@ -86,16 +89,19 @@ public class GameManager : MonoBehaviour
                     matcher.SetRelativeReference(control.LastSensorFrame.rotation);
                     inputController.playerResponseState.Where(e =>
                     {
-                        if (currentPassage.Decision.Keys.Any(k => k == "yes")) {
+                        if (currentPassage.Decision.Keys.Any(k => k == "yes"))
+                        {
                             return e == InputController.InputState.Yes || e == InputController.InputState.No;
-                        } else { 
+                        }
+                        else
+                        {
                             return e == InputController.InputState.Left || e == InputController.InputState.Right;
                         }
                     })
                     .First()
                     .Subscribe(e => {
-                        var d = currentPassage.Decision.Keys.Any(k => k == "yes") 
-                            ? e == InputController.InputState.Yes ? "yes" : "no" 
+                        var d = currentPassage.Decision.Keys.Any(k => k == "yes")
+                            ? e == InputController.InputState.Yes ? "yes" : "no"
                             : e == InputController.InputState.Left ? "left" : "right";
                         var id = currentPassage.Decision[d];
                         currentPassage = Stories[id];
@@ -120,14 +126,14 @@ public class GameManager : MonoBehaviour
     {
         // play audio file
         var soundQ = this.currentPassage.SoundQueue;
-        for (var i = 0;  i < soundQ.Count; i++)
+        for (var i = 0; i < soundQ.Count; i++)
         {
             var currentSound = soundQ[i];
             var soundLoc = "Audio/" + currentSound.FileLoc;
             var audioClip = Resources.Load<AudioClip>(soundLoc);
             var obj = GameObject.Find(currentSound.TransformObject);
             var obj1 = obj.GetComponent<AudioSource>();
-            obj1.volume =  currentSound.Volume ?? 1;
+            obj1.volume = currentSound.Volume ?? obj1.volume;
             obj1.loop = currentSound.IsRepeat;
 
             //if (currentSound.IsRepeat)
@@ -142,27 +148,30 @@ public class GameManager : MonoBehaviour
             {
                 //obj1.Play();
                 yield return new WaitForSeconds(1);
-            } 
+            }
             else if (!currentSound.IsBlocking)
             {
-                obj1.Play(); 
+                obj1.Play();
             }
-            else {
+            else
+            {
                 obj1.Play();
                 yield return new WaitForSeconds(obj1.clip.length);
             }
 
         }
         // add to queue
-        if(currentPassage.Goto != null) 
+        if (currentPassage.Goto != null)
         {
             currentPassage = Stories[currentPassage.Goto.Value];
             myState.OnNext(MyState.TriggerAlienDialog);
         }
-        else if(currentPassage.Decision != null)
+        else if (currentPassage.Decision != null)
         {
             myState.OnNext(MyState.TriggerPlayerAwaitAction);
-        } else {
+        }
+        else
+        {
             //game is done  
         }
     }
