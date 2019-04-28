@@ -4,6 +4,8 @@ using UnityEngine;
 using UniRx;
 using System.IO;
 using Newtonsoft.Json;
+using System;
+using System.Linq;
 
 public enum MyState 
 {
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour
     Dictionary<int, CurrentEvent> Stories;
     CurrentEvent currentPassage;
     Subject<MyState> myState = new Subject<MyState>();
+
+    public bool debug;
 
     // Start is called before the first frame update
     void Start()
@@ -73,10 +77,19 @@ public class GameManager : MonoBehaviour
                     break;
                 case MyState.TriggerPlayerAwaitAction:
                     Debug.Log("waiting for player");
-                    inputController.playerResponseState.Where(e => e == InputController.InputState.Yes || e == InputController.InputState.Yes)
+                    inputController.playerResponseState.Where(e =>
+                    {
+                        if (currentPassage.Decision.Keys.Any(k => k == "yes")) {
+                            return e == InputController.InputState.Yes || e == InputController.InputState.No;
+                        } else { 
+                            return e == InputController.InputState.Left || e == InputController.InputState.Right;
+                        }
+                    })
                     .First()
                     .Subscribe(e => {
-                        var d = e == InputController.InputState.Yes ? "yes" : "no";
+                        var d = currentPassage.Decision.Keys.Any(k => k == "yes") 
+                            ? e == InputController.InputState.Yes ? "yes" : "no" 
+                            : e == InputController.InputState.Left ? "left" : "right";
                         var id = currentPassage.Decision[d];
                         currentPassage = Stories[id];
                         myState.OnNext(MyState.TriggerAlienDialog);
@@ -103,13 +116,25 @@ public class GameManager : MonoBehaviour
             var audioClip = Resources.Load<AudioClip>(soundLoc);
             var obj = GameObject.Find(currentSound.TransformObject);
             var obj1 = obj.GetComponent<AudioSource>();
+            Debug.Log(soundLoc);
+            if (audioClip == null)
+                throw new Exception(soundLoc + " not found!");
+
             obj1.clip = audioClip;
-            obj1.Play();
-            yield return new WaitForSeconds(obj1.clip.length);
+            if (debug)
+            {
+                //obj1.Play();
+                yield return new WaitForSeconds(1);
+            } else {
+                obj1.Play();
+                yield return new WaitForSeconds(obj1.clip.length);
+            }
+
         }
         if(currentPassage.Goto != null) 
         {
             currentPassage = Stories[currentPassage.Goto.Value];
+            myState.OnNext(MyState.TriggerAlienDialog);
         }
         else 
         {
