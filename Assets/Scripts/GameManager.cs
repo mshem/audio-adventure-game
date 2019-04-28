@@ -27,6 +27,7 @@ public class SoundQueue
     public string FileLoc;
     public bool IsBlocking;
     public string TransformObject;
+    public float? Volume;
 }
 
 public class GameManager : MonoBehaviour
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     Dictionary<int, CurrentEvent> Stories;
     CurrentEvent currentPassage;
     Subject<MyState> myState = new Subject<MyState>();
+    Dictionary<string, GameObject> OnLoopSound = new Dictionary<string, GameObject>();
 
     public bool debug;
 
@@ -121,6 +123,13 @@ public class GameManager : MonoBehaviour
             var audioClip = Resources.Load<AudioClip>(soundLoc);
             var obj = GameObject.Find(currentSound.TransformObject);
             var obj1 = obj.GetComponent<AudioSource>();
+            obj1.volume =  currentSound.Volume ?? 1;
+            obj1.loop = currentSound.IsRepeat;
+
+            if (currentSound.IsRepeat)
+            {
+                this.OnLoopSound.Add(currentSound.TransformObject, obj);
+            }
             Debug.Log(soundLoc);
             if (audioClip == null)
                 throw new Exception(soundLoc + " not found!");
@@ -129,7 +138,12 @@ public class GameManager : MonoBehaviour
             {
                 //obj1.Play();
                 yield return new WaitForSeconds(1);
-            } else {
+            } 
+            else if (!currentSound.IsBlocking)
+            {
+                obj1.Play(); 
+            }
+            else {
                 obj1.Play();
                 yield return new WaitForSeconds(obj1.clip.length);
             }
