@@ -45,7 +45,7 @@
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "zorblok-dialog/04-zorblock-explains",
+                "fileLoc": "zorblok-dialog/04-zorblock",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             }
@@ -124,7 +124,7 @@
         ],
         "decision": {
             "yes": "10",
-            "no": "11"
+            "no": "10"
         }
     },
     "10": {
@@ -301,13 +301,13 @@
         "soundQueue": [
             {
                 "isRepeat": false,
-                "fileLoc": "zorblok-dialog/24-yes-towards-conclusion",
+                "fileLoc": "zorblok-dialog/yes-towards-conclusion",
                 "isBlocking": true,
                 "transformObject": "ZORBLOK"
             }
         ],
         "decision": {
-            "left": "26",
+            "left": "29",
             "right": "27"
         }
     },
@@ -335,7 +335,7 @@
             } 
         ], 
         "decision": {
-            "left": "26",
+            "left": "29",
             "right": "27"
         }
     },

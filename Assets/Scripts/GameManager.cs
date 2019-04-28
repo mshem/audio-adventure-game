@@ -16,7 +16,7 @@ public enum MyState
 
 public class CurrentEvent
 {
-    public Queue<SoundQueue> SoundQueue;
+    public List<SoundQueue> SoundQueue;
     public int? Goto;
     public Dictionary<string, int> Decision;
 }
@@ -31,8 +31,8 @@ public class SoundQueue
 
 public class GameManager : MonoBehaviour
 {
+    public  int firstPassage = 0;
     public InputController inputController;
-    int firstPassage = 0;
     Dictionary<int, CurrentEvent> Stories;
     CurrentEvent currentPassage;
     Subject<MyState> myState = new Subject<MyState>();
@@ -113,10 +113,10 @@ public class GameManager : MonoBehaviour
     IEnumerator TriggerStoryEvent()
     {
         // play audio file
-        Queue<SoundQueue> soundQ = this.currentPassage.SoundQueue;
-        while (soundQ.Count > 0)
+        var soundQ = this.currentPassage.SoundQueue;
+        for (var i = 0;  i < soundQ.Count; i++)
         {
-            var currentSound = soundQ.Dequeue();
+            var currentSound = soundQ[i];
             var soundLoc = "Audio/" + currentSound.FileLoc;
             var audioClip = Resources.Load<AudioClip>(soundLoc);
             var obj = GameObject.Find(currentSound.TransformObject);
@@ -124,7 +124,6 @@ public class GameManager : MonoBehaviour
             Debug.Log(soundLoc);
             if (audioClip == null)
                 throw new Exception(soundLoc + " not found!");
-
             obj1.clip = audioClip;
             if (debug)
             {
@@ -141,9 +140,11 @@ public class GameManager : MonoBehaviour
             currentPassage = Stories[currentPassage.Goto.Value];
             myState.OnNext(MyState.TriggerAlienDialog);
         }
-        else 
+        else if(currentPassage.Decision != null)
         {
             myState.OnNext(MyState.TriggerPlayerAwaitAction);
+        } else {
+            //game is done  
         }
     }
 }
