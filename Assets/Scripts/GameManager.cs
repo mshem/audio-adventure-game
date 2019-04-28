@@ -64,6 +64,10 @@ public class GameManager : MonoBehaviour
     void RunLoop()
     {
         Debug.Log("Starting loop");
+        Bose.Wearable.RotationMatcher matcher = GameObject.FindObjectOfType<Bose.Wearable.RotationMatcher>();
+        Bose.Wearable.WearableControl control = GameObject.FindObjectOfType<Bose.Wearable.WearableControl>();
+        matcher.SetRelativeReference(control.LastSensorFrame.rotation);
+
         myState.Subscribe(state =>
         {
             switch (state)
@@ -77,6 +81,7 @@ public class GameManager : MonoBehaviour
                     break;
                 case MyState.TriggerPlayerAwaitAction:
                     Debug.Log("waiting for player");
+                    matcher.SetRelativeReference(control.LastSensorFrame.rotation);
                     inputController.playerResponseState.Where(e =>
                     {
                         if (currentPassage.Decision.Keys.Any(k => k == "yes")) {
