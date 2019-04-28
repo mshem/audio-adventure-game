@@ -12,7 +12,8 @@ public class InputController : MonoBehaviour
         Yes,
         No,
         Left,
-        Right
+        Right,
+        DoubleTap
     }
 
     public Subject<InputState> playerResponseState = new Subject<InputState>();
@@ -34,13 +35,13 @@ public class InputController : MonoBehaviour
 
     public void Left()
     {
-        Debug.Log("Left");
+        //Debug.Log("Left");
         playerResponseState.OnNext(InputState.Left);
     }
 
     public void Right()
     {
-        Debug.Log("Right");
+        //Debug.Log("Right");
         playerResponseState.OnNext(InputState.Right);
     }
 
@@ -54,5 +55,11 @@ public class InputController : MonoBehaviour
     {
         Debug.Log("No");
         playerResponseState.OnNext(InputState.No);
+    }
+
+    public void DoubleTap()
+    {
+        Debug.Log("Double Tap");
+        playerResponseState.OnNext(InputState.DoubleTap);
     }
 }

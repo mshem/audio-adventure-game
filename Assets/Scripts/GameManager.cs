@@ -101,6 +101,10 @@ public class GameManager : MonoBehaviour
                         currentPassage = Stories[id];
                         myState.OnNext(MyState.TriggerAlienDialog);
                     });
+                    inputController.playerResponseState.Where(e =>
+                    {
+                        return e == InputController.InputState.DoubleTap;
+                    });
                     break;
             }
         });
@@ -126,10 +130,10 @@ public class GameManager : MonoBehaviour
             obj1.volume =  currentSound.Volume ?? 1;
             obj1.loop = currentSound.IsRepeat;
 
-            if (currentSound.IsRepeat)
-            {
-                this.OnLoopSound.Add(currentSound.TransformObject, obj);
-            }
+            //if (currentSound.IsRepeat)
+            //{
+            //    this.OnLoopSound.Add(currentSound.TransformObject, obj);
+            //}
             Debug.Log(soundLoc);
             if (audioClip == null)
                 throw new Exception(soundLoc + " not found!");
@@ -149,6 +153,7 @@ public class GameManager : MonoBehaviour
             }
 
         }
+        // add to queue
         if(currentPassage.Goto != null) 
         {
             currentPassage = Stories[currentPassage.Goto.Value];
