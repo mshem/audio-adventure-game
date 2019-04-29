@@ -21,7 +21,7 @@
       <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Basic/Scripts/BasicDemoController.cs" Line="1" Column="1" />
       <File FileName="Assets/Bose/Wearable/Scripts/Hardware/SensorId.cs" Line="1" Column="1" />
       <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Basic/Scripts/BasicDemoUIPanel.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="53" Column="66" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="115" Column="77" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
@@ -30,9 +30,9 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="6" column="22" />
-      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="87" column="1" />
-      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="100" column="1" />
-      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="92" column="1" />
+      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="90" column="1" />
+      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="104" column="1" />
+      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="96" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

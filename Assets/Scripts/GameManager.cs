@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public InputController inputController;
     Dictionary<int, CurrentEvent> Stories;
     CurrentEvent currentPassage;
+    bool IsRepeating = false;
     Subject<MyState> myState = new Subject<MyState>();
     Dictionary<string, GameObject> OnLoopSound = new Dictionary<string, GameObject>();
 
@@ -55,6 +56,8 @@ public class GameManager : MonoBehaviour
         //Stories = JsonUtility.FromJson<>(jsonString);
         //}
         currentPassage = Stories[firstPassage];
+
+
 
         Observable.EveryUpdate()
         .Where((e) => Bose.Wearable.WearableConnectUIPanel.isDeviceConnected)
@@ -85,6 +88,7 @@ public class GameManager : MonoBehaviour
                     myState.OnNext(MyState.DoNothing);
                     break;
                 case MyState.TriggerPlayerAwaitAction:
+                    IsRepeating = false;
                     Debug.Log("waiting for player");
                     matcher.SetRelativeReference(control.LastSensorFrame.rotation);
                     inputController.playerResponseState.Where(e =>
@@ -107,10 +111,14 @@ public class GameManager : MonoBehaviour
                         currentPassage = Stories[id];
                         myState.OnNext(MyState.TriggerAlienDialog);
                     });
-                    inputController.playerResponseState.Where(e =>
-                    {
-                        return e == InputController.InputState.DoubleTap;
-                    });
+                    inputController.playerResponseState
+                       .Where(e => e == InputController.InputState.DoubleTap)
+                       .First()
+                       .Subscribe(_ => {
+                           IsRepeating = true;
+                           myState.OnNext(MyState.TriggerAlienDialog);
+                       });
+
                     break;
             }
         });
