@@ -331,6 +331,9 @@
     <Reference Include="Nustache.Core">
       <HintPath>/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Cradle/Editor/ThirdParty/Nustache/Nustache.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>/Users/michaelshemesh/Documents/audio-adventure-game/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>/Users/michaelshemesh/Documents/audio-adventure-game/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>

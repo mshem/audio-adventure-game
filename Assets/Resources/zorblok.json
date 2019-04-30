@@ -1,0 +1,518 @@
+{
+  "0": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "intro-music",
+        "isBlocking": true,
+        "transformObject": "FRONT"
+      },
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/01-intro",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": "1",
+      "no": "2"
+    }
+  },
+  "1": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/02-yes-after-intro",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 3
+  },
+  "2": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/03-no-after-intro",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": "3",
+      "no": "2"
+    }
+  },
+  "3": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "spaceship-starts",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-running",
+        "isBlocking": false,
+        "volume": 0.1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/04-zorblock-explains",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "left": "4",
+      "right": "5"
+    }
+  },
+  "4": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/06-left-brenda-left-me",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 6
+  },
+  "5": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/05-right-brenda-left-me",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 6
+  },
+  "6": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/07-brenda-left-me",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": "7",
+      "no": "8"
+    }
+  },
+  "7": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/08-yes-zorblock-threatens",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 9
+  },
+  "8": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/09-no-zorblock-threatens",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 9
+  },
+  "9": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/10-zorblock-threatens",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": "10",
+      "no": "10"
+    }
+  },
+  "10": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "engine-stops",
+        "isBlocking": true,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/11-yes-zorblock-eats",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": 12,
+      "no": 34
+    }
+  },
+  "11": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/12-no-zorblock-eats",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 12
+  },
+  "34": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/we-need-a-headnod",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": 12,
+      "no": 35
+    }
+  },
+  "12": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "spaceship-starts",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-running",
+        "isBlocking": false,
+        "volume": 0.1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/13-zorblock-sees-a-shortcut",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "left": "13",
+      "right": "14"
+    }
+  },
+  "13": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/14-left-at-shortcut",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 15
+  },
+  "14": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/15-right-at-shortcut",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 15
+  },
+  "15": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "engine-stops",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/16-stuck-in-traffic-with-sounds",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": "16",
+      "no": "17"
+    }
+  },
+  "16": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/17-yes-after-traffic",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 18
+  },
+  "17": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/18-no-after-traffic",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": "18",
+      "no": "17"
+    }
+  },
+  "18": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "spaceship-starts",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-running",
+        "isBlocking": false,
+        "volume": 0.1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/19-pick-up-the-pace",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": "19",
+      "no": "20"
+    }
+  },
+  "19": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/19-yes-hyperdrive",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 21
+  },
+  "20": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/20-no-play-it-safe",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 21
+  },
+  "21": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/21-getting-close",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "left": "22",
+      "right": "23"
+    }
+  },
+  "22": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/23-left-after-getting-close",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 24
+  },
+  "23": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/22-right-after-getting-close",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 24
+  },
+  "24": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/zorblock-comes-clean",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": "25",
+      "no": "31"
+    }
+  },
+  "25": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/24-yes-towards-conclusion",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "left": "29",
+      "right": "27"
+    }
+  },
+  "26": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/25-left-towards-Brenda",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": "28",
+      "no": "29"
+    }
+  },
+  "27": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/no-we-need-a-left",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "left": "29",
+      "right": "27"
+    }
+  },
+  "28": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/stop-this-thing",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": "28",
+      "no": "29"
+    }
+  },
+  "29": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "engine-stops",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/26-conclude-with-brenda",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 30
+  },
+  "30": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "outro-music",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ]
+  },
+  "31": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/26-no-towards-conclusion",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "left": "32",
+      "right": "33"
+    }
+  },
+  "32": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/we-need-to-make-a-right-towards-zahara",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "left": "32",
+      "right": "33"
+    }
+  },
+  "33": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "engine-stops",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/28-conclude-with-Zahara",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "goto": 30
+  }
+}
