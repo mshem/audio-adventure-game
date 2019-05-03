@@ -5,7 +5,7 @@
         "isRepeat": false,
         "fileLoc": "intro-music",
         "isBlocking": true,
-        "transformObject": "FRONT"
+        "transformObject": "ZORBLOK"
       },
       {
         "isRepeat": false,
@@ -51,7 +51,7 @@
         "fileLoc": "spaceship-starts",
         "isBlocking": true,
         "volume": 1,
-        "transformObject": "BACKGROUND"
+        "transformObject": "ZORBLOK"
       },
       {
         "isRepeat": true,
@@ -150,7 +150,7 @@
         "isRepeat": false,
         "fileLoc": "engine-stops",
         "isBlocking": true,
-        "transformObject": "BACKGROUND"
+        "transformObject": "ZORBLOK"
       },
       {
         "isRepeat": false,
@@ -196,7 +196,7 @@
         "fileLoc": "spaceship-starts",
         "isBlocking": true,
         "volume": 1,
-        "transformObject": "BACKGROUND"
+        "transformObject": "ZORBLOK"
       },
       {
         "isRepeat": true,
@@ -246,7 +246,7 @@
         "fileLoc": "engine-stops",
         "isBlocking": true,
         "volume": 1,
-        "transformObject": "BACKGROUND"
+        "transformObject": "ZORBLOK"
       },
       {
         "isRepeat": false,
@@ -292,7 +292,7 @@
         "fileLoc": "spaceship-starts",
         "isBlocking": true,
         "volume": 1,
-        "transformObject": "BACKGROUND"
+        "transformObject": "ZORBLOK"
       },
       {
         "isRepeat": true,
@@ -448,7 +448,7 @@
         "fileLoc": "engine-stops",
         "isBlocking": true,
         "volume": 1,
-        "transformObject": "BACKGROUND"
+        "transformObject": "ZORBLOK"
       },
       {
         "isRepeat": false,
@@ -504,7 +504,7 @@
         "fileLoc": "engine-stops",
         "isBlocking": true,
         "volume": 1,
-        "transformObject": "BACKGROUND"
+        "transformObject": "ZORBLOK"
       },
       {
         "isRepeat": false,
