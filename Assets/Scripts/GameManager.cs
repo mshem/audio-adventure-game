@@ -140,7 +140,6 @@ public class GameManager : MonoBehaviour
             var soundLoc = "Audio/" + currentSound.FileLoc;
             var audioClip = Resources.Load<AudioClip>(soundLoc);
             var obj = GameObject.Find(currentSound.TransformObject);
-            Debug.Log("transform obj = " + obj);
             var obj1 = obj.GetComponent<AudioSource>();
             obj1.volume = currentSound.Volume ?? obj1.volume;
             obj1.loop = currentSound.IsRepeat;
