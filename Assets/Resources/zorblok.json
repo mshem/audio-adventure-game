@@ -5,7 +5,7 @@
         "isRepeat": false,
         "fileLoc": "intro-music",
         "isBlocking": true,
-        "transformObject": "FRONT"
+        "transformObject": "ZORBLOK"
       },
       {
         "isRepeat": false,
@@ -62,7 +62,7 @@
       },
       {
         "isRepeat": false,
-        "fileLoc": "zorblok-dialog/04-zorblock-explains",
+        "fileLoc": "zorblok-dialog/04-zorblok-explains",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
       }
@@ -76,6 +76,20 @@
     "soundQueue": [
       {
         "isRepeat": false,
+        "fileLoc": "turn-left",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-running",
+        "isBlocking": false,
+        "volume": 0.1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
         "fileLoc": "zorblok-dialog/06-left-brenda-left-me",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
@@ -85,6 +99,20 @@
   },
   "5": {
     "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "turn-right",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-running",
+        "isBlocking": false,
+        "volume": 0.1,
+        "transformObject": "BACKGROUND"
+      },
       {
         "isRepeat": false,
         "fileLoc": "zorblok-dialog/05-right-brenda-left-me",
@@ -112,7 +140,7 @@
     "soundQueue": [
       {
         "isRepeat": false,
-        "fileLoc": "zorblok-dialog/08-yes-zorblock-threatens",
+        "fileLoc": "zorblok-dialog/08-yes-zorblok-threatens",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
       }
@@ -123,7 +151,7 @@
     "soundQueue": [
       {
         "isRepeat": false,
-        "fileLoc": "zorblok-dialog/09-no-zorblock-threatens",
+        "fileLoc": "zorblok-dialog/09-no-zorblok-threatens",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
       }
@@ -134,13 +162,13 @@
     "soundQueue": [
       {
         "isRepeat": false,
-        "fileLoc": "zorblok-dialog/10-zorblock-threatens",
+        "fileLoc": "zorblok-dialog/10-zorblok-threatens",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
       }
     ],
     "decision": {
-      "yes": "10",
+      "yes": "11",
       "no": "10"
     }
   },
@@ -150,25 +178,26 @@
         "isRepeat": false,
         "fileLoc": "engine-stops",
         "isBlocking": true,
+        "volume": 1,
         "transformObject": "BACKGROUND"
       },
       {
         "isRepeat": false,
-        "fileLoc": "zorblok-dialog/11-yes-zorblock-eats",
+        "fileLoc": "zorblok-dialog/11-yes-zorblok-eats",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
       }
     ],
     "decision": {
-      "yes": 12,
-      "no": 34
+      "yes": 34,
+      "no": 35
     }
   },
   "11": {
     "soundQueue": [
       {
         "isRepeat": false,
-        "fileLoc": "zorblok-dialog/12-no-zorblock-eats",
+        "fileLoc": "zorblok-dialog/12-no-zorblok-eats-new",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
       }
@@ -176,20 +205,6 @@
     "goto": 12
   },
   "34": {
-    "soundQueue": [
-      {
-        "isRepeat": false,
-        "fileLoc": "zorblok-dialog/we-need-a-headnod",
-        "isBlocking": true,
-        "transformObject": "ZORBLOK"
-      }
-    ],
-    "decision": {
-      "yes": 12,
-      "no": 35
-    }
-  },
-  "12": {
     "soundQueue": [
       {
         "isRepeat": false,
@@ -204,10 +219,29 @@
         "isBlocking": false,
         "volume": 0.1,
         "transformObject": "BACKGROUND"
-      },
+      }
+    ],
+    "goto": 12
+  },
+  "35": {
+    "soundQueue": [
       {
         "isRepeat": false,
-        "fileLoc": "zorblok-dialog/13-zorblock-sees-a-shortcut",
+        "fileLoc": "zorblok-dialog/we-need-a-headnod",
+        "isBlocking": true,
+        "transformObject": "ZORBLOK"
+      }
+    ],
+    "decision": {
+      "yes": 12,
+      "no": 34
+    }
+  },
+  "12": {
+    "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "zorblok-dialog/13-zorblok-sees-a-shortcut",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
       }
@@ -221,6 +255,20 @@
     "soundQueue": [
       {
         "isRepeat": false,
+        "fileLoc": "turn-left",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-running",
+        "isBlocking": false,
+        "volume": 0.1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
         "fileLoc": "zorblok-dialog/14-left-at-shortcut",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
@@ -230,6 +278,20 @@
   },
   "14": {
     "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "turn-right",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-running",
+        "isBlocking": false,
+        "volume": 0.1,
+        "transformObject": "BACKGROUND"
+      },
       {
         "isRepeat": false,
         "fileLoc": "zorblok-dialog/15-right-at-shortcut",
@@ -317,6 +379,20 @@
     "soundQueue": [
       {
         "isRepeat": false,
+        "fileLoc": "charge-up-hyperdrive",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-hyperdrive",
+        "isBlocking": false,
+        "volume": 0.5,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
         "fileLoc": "zorblok-dialog/19-yes-hyperdrive",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
@@ -353,6 +429,20 @@
     "soundQueue": [
       {
         "isRepeat": false,
+        "fileLoc": "turn-left",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-running",
+        "isBlocking": false,
+        "volume": 0.1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
         "fileLoc": "zorblok-dialog/23-left-after-getting-close",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
@@ -362,6 +452,20 @@
   },
   "23": {
     "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "turn-right",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-running",
+        "isBlocking": false,
+        "volume": 0.1,
+        "transformObject": "BACKGROUND"
+      },
       {
         "isRepeat": false,
         "fileLoc": "zorblok-dialog/22-right-after-getting-close",
@@ -375,7 +479,7 @@
     "soundQueue": [
       {
         "isRepeat": false,
-        "fileLoc": "zorblok-dialog/zorblock-comes-clean",
+        "fileLoc": "zorblok-dialog/zorblok-comes-clean",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
       }
@@ -445,6 +549,13 @@
     "soundQueue": [
       {
         "isRepeat": false,
+        "fileLoc": "turn-left",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
         "fileLoc": "engine-stops",
         "isBlocking": true,
         "volume": 1,
@@ -499,6 +610,13 @@
   },
   "33": {
     "soundQueue": [
+      {
+        "isRepeat": false,
+        "fileLoc": "turn-right",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
       {
         "isRepeat": false,
         "fileLoc": "engine-stops",
