@@ -9,7 +9,7 @@
       },
       {
         "isRepeat": false,
-        "fileLoc": "zorblok-dialog/01-intro",
+        "fileLoc": "zorblok-dialog/intro-with-turn",
         "isBlocking": true,
         "transformObject": "ZORBLOK"
       }
