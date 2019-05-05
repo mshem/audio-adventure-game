@@ -379,6 +379,20 @@
     "soundQueue": [
       {
         "isRepeat": false,
+        "fileLoc": "charge-up-hyperdrive",
+        "isBlocking": true,
+        "volume": 1,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": true,
+        "fileLoc": "spaceship-hyperdrive",
+        "isBlocking": false,
+        "volume": 0.5,
+        "transformObject": "BACKGROUND"
+      },
+      {
+        "isRepeat": false,
         "fileLoc": "zorblok-dialog/19-yes-hyperdrive",
         "isBlocking": true,
         "transformObject": "ZORBLOK"

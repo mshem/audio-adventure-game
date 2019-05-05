@@ -1858,7 +1858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec22a1d61e5b4cc2a426614ac256432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstPassage: 3
+  firstPassage: 19
   inputController: {fileID: 1303657616}
   debug: 0
 --- !u!1 &1367742201
@@ -2633,7 +2633,7 @@ GameObject:
   - component: {fileID: 1720208624}
   - component: {fileID: 1720208623}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2784,7 +2784,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.445
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
