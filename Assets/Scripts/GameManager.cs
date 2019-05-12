@@ -6,6 +6,8 @@ using System.IO;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
+using UnityEngine.UI;
+using Bose.Wearable;
 
 public enum MyState
 {
@@ -34,36 +36,106 @@ public class GameManager : MonoBehaviour
 {
     public int firstPassage = 0;
     public InputController inputController;
+    private bool IsRepeating = false;
     Dictionary<int, CurrentEvent> Stories;
     CurrentEvent currentPassage;
-    bool IsRepeating = false;
-    Subject<MyState> myState = new Subject<MyState>();
+    List<Coroutine> runningCoroutines = new List<Coroutine>();
+    Subject<bool> IsGameLoopRunning = new Subject<bool>();
+    Subject<bool> IsBoseHandSetConnected = new Subject<bool>();
+    IDisposable stateSub;
+
+    RotationMatcher Matcher;
+    WearableControl Control;
+
+    BehaviorSubject<MyState> myState;
+
     Dictionary<string, GameObject> OnLoopSound = new Dictionary<string, GameObject>();
+
+    public Button ResetButton;
+    public Button StartButton;
+    public Button PauseButton;
+
 
     public bool debug;
 
     // Start is called before the first frame update
     void Start()
     {
-        inputController = FindObjectOfType<InputController>();
-        //jsonutil load file
+        var boseWearableGameObject = FindObjectOfType<WearableConnectUIPanel>();
+        var boseWearable = boseWearableGameObject.GetComponent<WearableConnectUIPanel>();
+        boseWearable.DeviceConnectSuccess += this.OnDeviceConnected;
+        boseWearable.DeviceDisconnected += this.OnDeviceDisconnected;
 
-        //using (StreamReader r = new StreamReader("Assets/Resources/zorblok.json"))
-        //{
-        //string jsonString = r.ReadToEnd();
+        inputController = FindObjectOfType<InputController>();
         string jsonString = (Resources.Load("zorblok") as TextAsset).text;
         Stories = JsonConvert.DeserializeObject<Dictionary<int, CurrentEvent>>(jsonString);
-        //Stories = JsonUtility.FromJson<>(jsonString);
-        //}
         currentPassage = Stories[firstPassage];
 
+        //button setup
+        ResetButton.OnClickAsObservable().Subscribe(_ => { this.Reset();});
+        PauseButton.OnClickAsObservable().Subscribe(_ => { this.Pause();});
+        StartButton.OnClickAsObservable().Subscribe(_ => { this.Resume();});
 
+        //set initial state
+        this.myState = new BehaviorSubject<MyState>(MyState.TriggerAlienDialog);
 
-        Observable.EveryUpdate()
-        .Where((e) => Bose.Wearable.WearableConnectUIPanel.isDeviceConnected)
-        .First()
-        .Subscribe(_ => RunLoop());
+        var isGameRunnable = Observable.CombineLatest(IsBoseHandSetConnected, IsGameLoopRunning);
 
+        //game loop setup
+        isGameRunnable
+            .Where(e => e.All(c => c))
+            .Do(_ => Debug.Log("debug :D"))
+            .SelectMany(myState)
+            .Subscribe(GameLoop);
+
+    }
+
+    void GameLoop(MyState state)
+    {
+        switch (state)
+        {
+            case MyState.DoNothing:
+                //Do nothing
+                break;
+            case MyState.TriggerAlienDialog:
+                Matcher.SetRelativeReference(Control.LastSensorFrame.rotation);
+                runningCoroutines.Add(StartCoroutine(TriggerStoryEvent()));
+                myState.OnNext(MyState.DoNothing);
+                break;
+            case MyState.TriggerPlayerAwaitAction:
+                IsRepeating = false;
+                Debug.Log("waiting for player");
+                Matcher.SetRelativeReference(Control.LastSensorFrame.rotation);
+                inputController.playerResponseState.Where(e =>
+                {
+                    if (currentPassage.Decision.Keys.Any(k => k == "yes"))
+                    {
+                        return e == InputController.InputState.Yes || e == InputController.InputState.No;
+                    }
+                    else
+                    {
+                        return e == InputController.InputState.Left || e == InputController.InputState.Right;
+                    }
+                })
+                .First()
+                .Subscribe(e => {
+                    var d = currentPassage.Decision.Keys.Any(k => k == "yes")
+                        ? e == InputController.InputState.Yes ? "yes" : "no"
+                        : e == InputController.InputState.Left ? "left" : "right";
+                    var id = currentPassage.Decision[d];
+                    currentPassage = Stories[id];
+                    myState.OnNext(MyState.TriggerAlienDialog);
+                });
+                inputController.playerResponseState
+                   .Where(e => e == InputController.InputState.DoubleTap)
+                   .First()
+                   .Subscribe(_ => {
+                       IsRepeating = true;
+                       myState.OnNext(MyState.TriggerAlienDialog);
+                   });
+
+                break;
+        }
     }
 
     void RunLoop()
@@ -75,7 +147,7 @@ public class GameManager : MonoBehaviour
         //    matcher.SetRelativeReference(control.LastSensorFrame.rotation);
         //});
 
-        myState.Subscribe(state =>
+        stateSub = myState.Subscribe(state =>
         {
             switch (state)
             {
@@ -84,7 +156,7 @@ public class GameManager : MonoBehaviour
                     break;
                 case MyState.TriggerAlienDialog:
                     matcher.SetRelativeReference(control.LastSensorFrame.rotation);
-                    StartCoroutine(TriggerStoryEvent());
+                    runningCoroutines.Add(StartCoroutine(TriggerStoryEvent()));
                     myState.OnNext(MyState.DoNothing);
                     break;
                 case MyState.TriggerPlayerAwaitAction:
@@ -123,11 +195,6 @@ public class GameManager : MonoBehaviour
             }
         });
         myState.OnNext(MyState.TriggerAlienDialog);
-    }
-
-    private void Update()
-    {
-
     }
 
     IEnumerator TriggerStoryEvent()
@@ -181,6 +248,48 @@ public class GameManager : MonoBehaviour
         else
         {
             //game is done  
+        }
+    }
+
+    void OnDeviceConnected()
+    {
+        Debug.Log("Device Connected!!!");
+        Matcher = FindObjectOfType<RotationMatcher>();
+        Control = FindObjectOfType<WearableControl>();
+        this.IsBoseHandSetConnected.OnNext(true); 
+    }
+
+    private void OnDeviceDisconnected(Device boseDevice)
+    {
+        Debug.Log($"Device {boseDevice.name} Disconnected");
+    }
+
+    //Restart the game
+    private void Reset()
+    {
+        this.currentPassage = Stories[firstPassage];
+        StopRunningAudio();
+        myState.OnNext(MyState.TriggerAlienDialog);
+        //stop all coroutines... reset back to 
+    }
+
+    private void Resume()
+    {
+        this.IsGameLoopRunning.OnNext(true);
+    }
+
+    private void Pause()
+    {
+        this.IsGameLoopRunning.OnNext(false); //Stop game loop from running
+        //TODO: convert audio play into observable;
+        StopRunningAudio();
+    }
+
+    private void StopRunningAudio()
+    {
+        foreach (var co in this.runningCoroutines)
+        {
+            StopCoroutine(co);
         }
     }
 }
