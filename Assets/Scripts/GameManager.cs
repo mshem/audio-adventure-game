@@ -62,8 +62,15 @@ public class GameManager : MonoBehaviour
         Observable.EveryUpdate()
         .Where((e) => Bose.Wearable.WearableConnectUIPanel.isDeviceConnected)
         .First()
-        .Subscribe(_ => RunLoop());
+        .Subscribe(_ => ShowMainMenu());
 
+    }
+
+
+    void ShowMainMenu()
+    {
+
+        RunLoop();
     }
 
     void RunLoop()
