@@ -21,7 +21,7 @@
       <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Basic/Scripts/BasicDemoController.cs" Line="1" Column="1" />
       <File FileName="Assets/Bose/Wearable/Scripts/Hardware/SensorId.cs" Line="1" Column="1" />
       <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Basic/Scripts/BasicDemoUIPanel.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="73" Column="19" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="64" Column="81" />
       <File FileName="Assets/Doozy/Examples/Scripts/ExampleProgressTargetAudioMixer.cs" Line="1" Column="1" />
     </Files>
     <Pads>
@@ -29,6 +29,29 @@
         <State name="__root__">
           <Node name="audio-adventure-game" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="Bose" expanded="True">
+                <Node name="Wearable" expanded="True">
+                  <Node name="Examples" expanded="True">
+                    <Node name="ContentDemos" expanded="True">
+                      <Node name="Basic" expanded="True">
+                        <Node name="Scripts" expanded="True" />
+                      </Node>
+                      <Node name="Gesture" expanded="True">
+                        <Node name="Scripts" expanded="True" />
+                      </Node>
+                    </Node>
+                    <Node name="Shared" expanded="True">
+                      <Node name="Scripts" expanded="True" />
+                    </Node>
+                  </Node>
+                  <Node name="Scripts" expanded="True">
+                    <Node name="Editor" expanded="True">
+                      <Node name="Build Processors" expanded="True" />
+                    </Node>
+                    <Node name="Hardware" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
               <Node name="Doozy" expanded="True">
                 <Node name="Examples" expanded="True">
                   <Node name="Scripts" expanded="True" />
@@ -47,12 +70,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="07491c6d-52c6-4684-8538-dc6488aa9cbd" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="6" column="22" />
-      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="97" column="1" />
-      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="111" column="1" />
-      <Breakpoint file="/Users/michaelshemesh/Documents/audio-adventure-game/Assets/Scripts/GameManager.cs" relfile="Assets/Scripts/GameManager.cs" line="103" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

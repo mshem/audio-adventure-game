@@ -622,7 +622,18 @@ PlayerSettings:
   webGLCompressionFormat: 1
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: dUI_TextMeshPro
+    4: dUI_TextMeshPro
+    7: dUI_TextMeshPro
+    13: dUI_TextMeshPro
+    14: dUI_TextMeshPro
+    19: dUI_TextMeshPro
+    21: dUI_TextMeshPro
+    25: dUI_TextMeshPro
+    26: dUI_TextMeshPro
+    27: dUI_TextMeshPro
+    28: dUI_TextMeshPro
   platformArchitecture:
     iOS: 1
   scriptingBackend: {}
