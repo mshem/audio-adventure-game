@@ -37,9 +37,11 @@ public class GameManager : MonoBehaviour
     public int firstPassage = 0;
     public InputController inputController;
     private bool IsRepeating = false;
+    public bool IsGameRunning = false;
+
     Dictionary<int, CurrentEvent> Stories;
     CurrentEvent currentPassage;
-    List<Coroutine> runningCoroutines = new List<Coroutine>();
+    List<IDisposable> runningSoundQueue = new List<IDisposable>();
     Subject<bool> IsGameLoopRunning = new Subject<bool>();
     Subject<bool> IsBoseHandSetConnected = new Subject<bool>();
     IDisposable stateSub;
@@ -72,22 +74,32 @@ public class GameManager : MonoBehaviour
         currentPassage = Stories[firstPassage];
 
         //button setup
-        ResetButton.OnClickAsObservable().Subscribe(_ => { this.Reset();});
-        PauseButton.OnClickAsObservable().Subscribe(_ => { this.Pause();});
-        StartButton.OnClickAsObservable().Subscribe(_ => { this.Resume();});
+        ResetButton.OnClickAsObservable().Subscribe(_ => { this.Reset(); });
+        PauseButton.OnClickAsObservable().Subscribe(_ => { this.Pause(); });
+        StartButton.OnClickAsObservable().Subscribe(_ => { this.Resume(); });
 
         //set initial state
         this.myState = new BehaviorSubject<MyState>(MyState.TriggerAlienDialog);
 
         var isGameRunnable = Observable.CombineLatest(IsBoseHandSetConnected, IsGameLoopRunning);
+        isGameRunnable.Subscribe(isTrue => {
+            IsGameRunning = isTrue.All(t => t == true);
+        });
 
-        //game loop setup
-        isGameRunnable
-            .Where(e => e.All(c => c))
-            .Do(_ => Debug.Log("debug :D"))
-            .SelectMany(myState)
-            .Subscribe(GameLoop);
+        myState.CombineLatest(isGameRunnable, (state, isRun) => 
+        {
+            var isRunnable = isRun.All(r => r);
+            return new Tuple<bool, MyState>(isRunnable, state); 
+        })
+        .Where(t => t.Item1)
+        .Subscribe(t => 
+        {
+            GameLoop(t.Item2); 
+        });
 
+
+        //kick off the game
+        myState.OnNext(MyState.TriggerAlienDialog);
     }
 
     void GameLoop(MyState state)
@@ -99,7 +111,29 @@ public class GameManager : MonoBehaviour
                 break;
             case MyState.TriggerAlienDialog:
                 Matcher.SetRelativeReference(Control.LastSensorFrame.rotation);
-                runningCoroutines.Add(StartCoroutine(TriggerStoryEvent()));
+                //need to subscribe to observable from here and perform them one by one
+                runningSoundQueue.Add(
+                    TriggerStory()
+                    .Where(_ => IsGameRunning)
+                    .Subscribe(
+                        (_)=> { //on subscribe
+                            Debug.Log("On going sound queue: " + _);    
+                        }, 
+                        () => { //on complete
+                        if (currentPassage.Goto != null)
+                        {
+                            currentPassage = Stories[currentPassage.Goto.Value];
+                            myState.OnNext(MyState.TriggerAlienDialog);
+                        }
+                        else if (currentPassage.Decision != null)
+                        {
+                            myState.OnNext(MyState.TriggerPlayerAwaitAction);
+                        }
+                        else
+                        {
+                            //game is done, go back to main menu  
+                        }
+                }));
                 myState.OnNext(MyState.DoNothing);
                 break;
             case MyState.TriggerPlayerAwaitAction:
@@ -118,7 +152,8 @@ public class GameManager : MonoBehaviour
                     }
                 })
                 .First()
-                .Subscribe(e => {
+                .Subscribe(e =>
+                {
                     var d = currentPassage.Decision.Keys.Any(k => k == "yes")
                         ? e == InputController.InputState.Yes ? "yes" : "no"
                         : e == InputController.InputState.Left ? "left" : "right";
@@ -129,7 +164,8 @@ public class GameManager : MonoBehaviour
                 inputController.playerResponseState
                    .Where(e => e == InputController.InputState.DoubleTap)
                    .First()
-                   .Subscribe(_ => {
+                   .Subscribe(_ =>
+                   {
                        IsRepeating = true;
                        myState.OnNext(MyState.TriggerAlienDialog);
                    });
@@ -138,117 +174,86 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void RunLoop()
+    //void RunLoop()
+    //{
+    //    Debug.Log("Starting loop");
+    //    Bose.Wearable.RotationMatcher matcher = GameObject.FindObjectOfType<Bose.Wearable.RotationMatcher>();
+    //    Bose.Wearable.WearableControl control = GameObject.FindObjectOfType<Bose.Wearable.WearableControl>();
+    //    //myState.First().Subscribe(state => {
+    //    //    matcher.SetRelativeReference(control.LastSensorFrame.rotation);
+    //    //});
+
+    //    stateSub = myState.Subscribe(state =>
+    //    {
+    //        switch (state)
+    //        {
+    //            case MyState.DoNothing:
+    //                //Do nothing
+    //                break;
+    //            case MyState.TriggerAlienDialog:
+    //                matcher.SetRelativeReference(control.LastSensorFrame.rotation);
+    //                 TriggerStory().Subscribe();
+    //                myState.OnNext(MyState.DoNothing);
+    //                break;
+    //            case MyState.TriggerPlayerAwaitAction:
+    //                IsRepeating = false;
+    //                Debug.Log("waiting for player");
+    //                matcher.SetRelativeReference(control.LastSensorFrame.rotation);
+    //                inputController.playerResponseState.Where(e =>
+    //                {
+    //                    if (currentPassage.Decision.Keys.Any(k => k == "yes"))
+    //                    {
+    //                        return e == InputController.InputState.Yes || e == InputController.InputState.No;
+    //                    }
+    //                    else
+    //                    {
+    //                        return e == InputController.InputState.Left || e == InputController.InputState.Right;
+    //                    }
+    //                })
+    //                .First()
+    //                .Subscribe(e =>
+    //                {
+    //                    var d = currentPassage.Decision.Keys.Any(k => k == "yes")
+    //                        ? e == InputController.InputState.Yes ? "yes" : "no"
+    //                        : e == InputController.InputState.Left ? "left" : "right";
+    //                    var id = currentPassage.Decision[d];
+    //                    currentPassage = Stories[id];
+    //                    myState.OnNext(MyState.TriggerAlienDialog);
+    //                });
+    //                inputController.playerResponseState
+    //                   .Where(e => e == InputController.InputState.DoubleTap)
+    //                   .First()
+    //                   .Subscribe(_ =>
+    //                   {
+    //                       IsRepeating = true;
+    //                       myState.OnNext(MyState.TriggerAlienDialog);
+    //                   });
+
+    //                break;
+    //        }
+    //    });
+    //    myState.OnNext(MyState.TriggerAlienDialog);
+    //}
+
+    IObservable<float> TriggerStory()
     {
-        Debug.Log("Starting loop");
-        Bose.Wearable.RotationMatcher matcher = GameObject.FindObjectOfType<Bose.Wearable.RotationMatcher>();
-        Bose.Wearable.WearableControl control = GameObject.FindObjectOfType<Bose.Wearable.WearableControl>();
-        //myState.First().Subscribe(state => {
-        //    matcher.SetRelativeReference(control.LastSensorFrame.rotation);
-        //});
-
-        stateSub = myState.Subscribe(state =>
-        {
-            switch (state)
-            {
-                case MyState.DoNothing:
-                    //Do nothing
-                    break;
-                case MyState.TriggerAlienDialog:
-                    matcher.SetRelativeReference(control.LastSensorFrame.rotation);
-                    runningCoroutines.Add(StartCoroutine(TriggerStoryEvent()));
-                    myState.OnNext(MyState.DoNothing);
-                    break;
-                case MyState.TriggerPlayerAwaitAction:
-                    IsRepeating = false;
-                    Debug.Log("waiting for player");
-                    matcher.SetRelativeReference(control.LastSensorFrame.rotation);
-                    inputController.playerResponseState.Where(e =>
-                    {
-                        if (currentPassage.Decision.Keys.Any(k => k == "yes"))
-                        {
-                            return e == InputController.InputState.Yes || e == InputController.InputState.No;
-                        }
-                        else
-                        {
-                            return e == InputController.InputState.Left || e == InputController.InputState.Right;
-                        }
-                    })
-                    .First()
-                    .Subscribe(e => {
-                        var d = currentPassage.Decision.Keys.Any(k => k == "yes")
-                            ? e == InputController.InputState.Yes ? "yes" : "no"
-                            : e == InputController.InputState.Left ? "left" : "right";
-                        var id = currentPassage.Decision[d];
-                        currentPassage = Stories[id];
-                        myState.OnNext(MyState.TriggerAlienDialog);
-                    });
-                    inputController.playerResponseState
-                       .Where(e => e == InputController.InputState.DoubleTap)
-                       .First()
-                       .Subscribe(_ => {
-                           IsRepeating = true;
-                           myState.OnNext(MyState.TriggerAlienDialog);
-                       });
-
-                    break;
-            }
-        });
-        myState.OnNext(MyState.TriggerAlienDialog);
-    }
-
-    IEnumerator TriggerStoryEvent()
-    {
-        // play audio file
         var soundQ = this.currentPassage.SoundQueue;
-        for (var i = 0; i < soundQ.Count; i++)
+        var soundObservables = soundQ.Select(s =>
         {
-            var currentSound = soundQ[i];
-            var soundLoc = "Audio/" + currentSound.FileLoc;
-            var audioClip = Resources.Load<AudioClip>(soundLoc);
-            var obj = GameObject.Find(currentSound.TransformObject);
-            var obj1 = obj.GetComponent<AudioSource>();
-            obj1.volume = currentSound.Volume ?? obj1.volume;
-            obj1.loop = currentSound.IsRepeat;
+            var obj = GameObject.Find(s.TransformObject);
+            var audioObject = obj.GetComponent<AudioObject>();
+            audioObject.Load(s);
+            return audioObject.AudioObservable;
+        });
 
-            //if (currentSound.IsRepeat)
-            //{
-            //    this.OnLoopSound.Add(currentSound.TransformObject, obj);
-            //}
-            Debug.Log(soundLoc);
-            if (audioClip == null)
-                throw new Exception(soundLoc + " not found!");
-            obj1.clip = audioClip;
-            if (debug)
-            {
-                //obj1.Play();
-                yield return new WaitForSeconds(1);
-            }
-            else if (!currentSound.IsBlocking)
-            {
-                obj1.Play();
-            }
-            else
-            {
-                obj1.Play();
-                yield return new WaitForSeconds(obj1.clip.length);
-            }
+        IObservable<float> audioQueueObservable = Observable.Concat(soundObservables);
 
-        }
-        // add to queue
-        if (currentPassage.Goto != null)
+        audioQueueObservable.DoOnCompleted(() =>
         {
-            currentPassage = Stories[currentPassage.Goto.Value];
-            myState.OnNext(MyState.TriggerAlienDialog);
-        }
-        else if (currentPassage.Decision != null)
-        {
-            myState.OnNext(MyState.TriggerPlayerAwaitAction);
-        }
-        else
-        {
-            //game is done  
-        }
+
+        });
+
+        return audioQueueObservable;
     }
 
     void OnDeviceConnected()
@@ -256,7 +261,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Device Connected!!!");
         Matcher = FindObjectOfType<RotationMatcher>();
         Control = FindObjectOfType<WearableControl>();
-        this.IsBoseHandSetConnected.OnNext(true); 
+        this.IsBoseHandSetConnected.OnNext(true);
     }
 
     private void OnDeviceDisconnected(Device boseDevice)
@@ -269,6 +274,11 @@ public class GameManager : MonoBehaviour
     {
         this.currentPassage = Stories[firstPassage];
         StopRunningAudio();
+        var audioObjects = FindObjectsOfType<AudioObject>();
+        foreach (var audioObject in audioObjects)
+        {
+            audioObject.audioSource.clip = null;
+        }
         myState.OnNext(MyState.TriggerAlienDialog);
         //stop all coroutines... reset back to 
     }
@@ -276,20 +286,29 @@ public class GameManager : MonoBehaviour
     private void Resume()
     {
         this.IsGameLoopRunning.OnNext(true);
+        var audioObjects = FindObjectsOfType<AudioObject>();
+        foreach (var audioObject in audioObjects)
+        {
+            audioObject.Play();
+        }
     }
 
     private void Pause()
     {
         this.IsGameLoopRunning.OnNext(false); //Stop game loop from running
         //TODO: convert audio play into observable;
-        StopRunningAudio();
+        var audioObjects = FindObjectsOfType<AudioObject>();
+        foreach (var audioObject in audioObjects)
+        {
+            audioObject.Pause();
+        }
     }
 
     private void StopRunningAudio()
     {
-        foreach (var co in this.runningCoroutines)
+        foreach (var co in this.runningSoundQueue)
         {
-            StopCoroutine(co);
+            co.Dispose();
         }
     }
 }
