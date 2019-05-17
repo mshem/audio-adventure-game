@@ -4,59 +4,16 @@
       <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Gesture/Scripts/GestureIconFactory.cs" Line="1" Column="1" />
       <File FileName="Assets/Bose/Wearable/Connection/Scripts/Connection/WearableConnectUIPanel.cs" Line="1" Column="1" />
       <File FileName="Assets/Bose/Wearable/Scripts/Providers/WearableMobileProvider.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/UniRx/Scripts/Observer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Cradle/README.md" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/UniRx/Scripts/Subjects/Subject.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/UniRx/Scripts/Async/Internal/ContinuationQueue.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/UniRx/Scripts/Async/Internal/PlayerLoopRunner.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/InputController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/UniRx/Scripts/Operators/Where.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/UniRx/Scripts/Operators/First.cs" Line="1" Column="1" />
-      <File FileName="Assets/Bose/Wearable/Scripts/WearableControl.cs" Line="1" Column="1" />
-      <File FileName="Assets/Bose/Wearable/Connection/Scripts/UI/ConcentricLoaderUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ShootRay.cs" Line="33" Column="40" />
+      <File FileName="Assets/Scripts/AudioObject.cs" Line="35" Column="11" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="139" Column="41" />
       <File FileName="Assets/Resources/zorblok.json" Line="1" Column="1" />
-      <File FileName="Assets/Bose/Wearable/Examples/Shared/Scripts/AppRoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Bose/Wearable/Examples/Shared/Scripts/LoadingUIPanel.cs" Line="1" Column="1" />
-      <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Basic/Scripts/BasicDemoController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Bose/Wearable/Scripts/Hardware/SensorId.cs" Line="1" Column="1" />
-      <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Basic/Scripts/BasicDemoUIPanel.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="64" Column="81" />
-      <File FileName="Assets/Doozy/Examples/Scripts/ExampleProgressTargetAudioMixer.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="audio-adventure-game" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Bose" expanded="True">
-                <Node name="Wearable" expanded="True">
-                  <Node name="Examples" expanded="True">
-                    <Node name="ContentDemos" expanded="True">
-                      <Node name="Basic" expanded="True">
-                        <Node name="Scripts" expanded="True" />
-                      </Node>
-                      <Node name="Gesture" expanded="True">
-                        <Node name="Scripts" expanded="True" />
-                      </Node>
-                    </Node>
-                    <Node name="Shared" expanded="True">
-                      <Node name="Scripts" expanded="True" />
-                    </Node>
-                  </Node>
-                  <Node name="Scripts" expanded="True">
-                    <Node name="Editor" expanded="True">
-                      <Node name="Build Processors" expanded="True" />
-                    </Node>
-                    <Node name="Hardware" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="Doozy" expanded="True">
-                <Node name="Examples" expanded="True">
-                  <Node name="Scripts" expanded="True" />
-                </Node>
-              </Node>
+              <Node name="Resources" expanded="True" />
               <Node name="Scripts" expanded="True">
                 <Node name="GameManager.cs" selected="True" />
               </Node>
@@ -68,7 +25,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="07491c6d-52c6-4684-8538-dc6488aa9cbd" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b0dc26c3-f979-464a-8452-f0512ac8540c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

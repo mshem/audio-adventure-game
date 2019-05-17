@@ -406,3 +406,12 @@
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.Editor.dll.mdb
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Newtonsoft.Json.dll
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Newtonsoft.Json.xml
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DDebug.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTween.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTweenEditor.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UnityEditor.WebGL.Extensions.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UnityEditor.WebGL.Extensions.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTween.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTween.xml
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTweenEditor.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTweenEditor.xml

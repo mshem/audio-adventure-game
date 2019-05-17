@@ -26,3 +26,6 @@ MonoBehaviour:
   - Repeat
   - Quit
   - Back
+  - Hide Controls
+  - Show Controls
+  - Replay

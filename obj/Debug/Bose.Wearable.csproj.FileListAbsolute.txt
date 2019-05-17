@@ -796,3 +796,4 @@
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTweenEditor.dll.mdb
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTweenEditor.xml
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UnityEditor.iOS.Extensions.Common.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Boo.Lang.dll

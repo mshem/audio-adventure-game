@@ -390,7 +390,6 @@
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UnityEditor.Purchasing.dll.mdb
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.IvyParser.dll.mdb
-/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.xml
 /Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UnityEditor.iOS.Extensions.Common.dll.mdb
 /Users/michaelshemesh/Documents/audio-adventure-game/obj/Debug/Bose.Wearable.Editor.csprojAssemblyReference.cache
 /Users/michaelshemesh/Documents/audio-adventure-game/obj/Debug/Bose.Wearable.Editor.csproj.CoreCompileInputs.cache
@@ -808,3 +807,13 @@
 /Users/yuenwingkam/Documents/Git/audio-adventure-game/Temp/bin/Debug/Unity.Analytics.Tracker.dll
 /Users/yuenwingkam/Documents/Git/audio-adventure-game/Temp/bin/Debug/UnityEditor.Advertisements.dll
 /Users/yuenwingkam/Documents/Git/audio-adventure-game/Temp/bin/Debug/UnityEditor.Purchasing.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DDebug.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTween.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTweenEditor.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UnityEditor.WebGL.Extensions.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UnityEditor.iOS.Extensions.Xcode.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/UnityEditor.WebGL.Extensions.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTween.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTween.xml
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTweenEditor.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTweenEditor.xml
