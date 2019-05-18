@@ -1,23 +1,47 @@
 ﻿<Properties StartupConfiguration="{72B4CE79-CE3D-3248-164A-D0FB9BDA19ED}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NewMonoBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Bose/Wearable/Scripts/DragAndDrop/RotationMatcher.cs">
     <Files>
       <File FileName="Assets/Bose/Wearable/Examples/ContentDemos/Gesture/Scripts/GestureIconFactory.cs" Line="1" Column="1" />
       <File FileName="Assets/Bose/Wearable/Connection/Scripts/Connection/WearableConnectUIPanel.cs" Line="1" Column="1" />
       <File FileName="Assets/Bose/Wearable/Scripts/Providers/WearableMobileProvider.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/AudioObject.cs" Line="35" Column="11" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="136" Column="71" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="149" Column="1" />
       <File FileName="Assets/Resources/zorblok.json" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/NewMonoBehaviour.cs" Line="16" Column="5" />
+      <File FileName="Assets/mcs.rsp" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ActiveStateToggler.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/InputController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ShootRay.cs" Line="30" Column="14" />
+      <File FileName="Assets/Bose/Wearable/Scripts/Editor/Build Processors/XcodePostBuildProcessor.cs" Line="50" Column="48" />
+      <File FileName="Assets/Scripts/RotationGet.cs" Line="1" Column="1" />
+      <File FileName="Assets/Bose/Wearable/Scripts/WearableControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Bose/Wearable/Scripts/DragAndDrop/RotationMatcher.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="audio-adventure-game" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Resources" expanded="True" />
-              <Node name="Scripts" expanded="True">
-                <Node name="NewMonoBehaviour.cs" selected="True" />
+              <Node name="Bose" expanded="True">
+                <Node name="Wearable" expanded="True">
+                  <Node name="Examples" expanded="True">
+                    <Node name="ContentDemos" expanded="True">
+                      <Node name="Gesture" expanded="True">
+                        <Node name="Scripts" expanded="True" />
+                      </Node>
+                    </Node>
+                  </Node>
+                  <Node name="Scripts" expanded="True">
+                    <Node name="DragAndDrop" expanded="True">
+                      <Node name="RotationMatcher.cs" selected="True" />
+                    </Node>
+                    <Node name="Editor" expanded="True">
+                      <Node name="Build Processors" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
               </Node>
+              <Node name="Resources" expanded="True" />
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -26,7 +50,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b0dc26c3-f979-464a-8452-f0512ac8540c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="426a73e4-2476-46a0-9b41-ec5b593783d2" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

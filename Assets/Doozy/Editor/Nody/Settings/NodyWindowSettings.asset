@@ -50,13 +50,13 @@ MonoBehaviour:
   - {fileID: 114452708104972902, guid: d916d1937cfec4ba28eef0263d8514b8, type: 2}
   - {fileID: 114469933622032802, guid: d916d1937cfec4ba28eef0263d8514b8, type: 2}
   SelectedNodes:
-  - {fileID: 114076582545206718, guid: d916d1937cfec4ba28eef0263d8514b8, type: 2}
+  - {fileID: 114364760991850092, guid: d916d1937cfec4ba28eef0263d8514b8, type: 2}
   GraphTabs:
   - IsRootTab: 1
     Graph: {fileID: 11400000, guid: d916d1937cfec4ba28eef0263d8514b8, type: 2}
     SubGraphNode: {fileID: 0}
-    Zoom: 1.3
-    PanOffset: {x: 627.82245, y: 308.69278}
+    Zoom: 0.9
+    PanOffset: {x: 262.98334, y: 478.9}
     SelectedNodes: []
     DeletedNodes: []
   CurrentView: 1

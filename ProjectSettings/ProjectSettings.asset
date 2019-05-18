@@ -156,7 +156,7 @@ PlayerSettings:
     Android: com.audio.adventure
     iOS: com.zorblok.audio-adventure
   buildNumber:
-    iOS: 4
+    iOS: 5
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0

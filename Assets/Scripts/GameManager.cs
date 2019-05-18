@@ -57,7 +57,8 @@ public class GameManager : MonoBehaviour
     public Button ResetButton;
     public Button StartButton;
     public Button PauseButton;
-
+    public Transform player;
+    public Transform leftright;
 
     public bool debug;
 
@@ -111,8 +112,9 @@ public class GameManager : MonoBehaviour
                 //Do nothing
                 break;
             case MyState.TriggerAlienDialog:
-                Matcher.SetRelativeReference(Control.LastSensorFrame.rotation);
                 //need to subscribe to observable from here and perform them one by one
+                //leftright.rotation = player.rotation;
+                //Matcher.SetRelativeReference(Control.LastSensorFrame.rotation);
                 runningSoundQueue.Add(
                     TriggerStory()
                     .Where(_ => IsGameRunning)
@@ -141,6 +143,8 @@ public class GameManager : MonoBehaviour
             case MyState.TriggerPlayerAwaitAction:
                 IsRepeating = false;
                 Debug.Log("waiting for player");
+                //Matcher.SetRelativeReference();
+                leftright.rotation = player.rotation;
                 Matcher.SetRelativeReference(Control.LastSensorFrame.rotation);
                 inputController.playerResponseState.Where(e =>
                 {
@@ -264,6 +268,7 @@ public class GameManager : MonoBehaviour
         Matcher = FindObjectOfType<RotationMatcher>();
         Control = FindObjectOfType<WearableControl>();
         this.IsBoseHandSetConnected.OnNext(true);
+        GameEventMessage.SendEvent("Startgame");
     }
 
     private void OnDeviceDisconnected(Device boseDevice)

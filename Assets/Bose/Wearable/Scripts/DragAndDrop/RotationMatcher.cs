@@ -86,16 +86,21 @@ namespace Bose.Wearable
 			// Get a frame of sensor data. Since no integration is being performed, we can safely ignore all
 			// intermediate frames and just grab the most recent.
 			SensorFrame frame = _wearableControl.LastSensorFrame;
-
+            Quaternion rotation = frame.rotation;
+            if (gameObject.name == "Player")
+            {
+                rotation.x = 0;
+                rotation.z = 0;
+            }
 			if (_mode == RotationReference.Absolute)
 			{
 				// In absolute mode, match the rotation exactly.
-				transform.rotation = frame.rotation;
+				transform.rotation = rotation;
 			}
 			else if (_mode == RotationReference.Relative)
 			{
 				// In relative mode, left-apply the inverse of the reference rotation to compute the relative change
-				transform.rotation = _inverseReference * frame.rotation;
+				transform.rotation = _inverseReference * rotation;
 			}
 		}
 
