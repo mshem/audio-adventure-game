@@ -23,7 +23,7 @@ public class InputController : MonoBehaviour
     {
         Bose.Wearable.WearableControl.Instance.HeadNodGesture.Enable();
         Bose.Wearable.WearableControl.Instance.HeadShakeGesture.Enable();
-        //BoseWearableEventHandler. Bose.Wearable.WearableControl.Instance.DoubleTapDetected;
+        Bose.Wearable.WearableControl.Instance.DoubleTapGesture.Enable();
 
     }
 
