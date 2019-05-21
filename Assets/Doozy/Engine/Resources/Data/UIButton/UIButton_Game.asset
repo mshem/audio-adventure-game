@@ -32,3 +32,5 @@ MonoBehaviour:
   - Load
   - StoryTile
   - Resume
+  - Settings
+  - About
