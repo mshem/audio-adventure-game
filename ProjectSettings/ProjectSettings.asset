@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Riding With Zorblok
+  companyName: AudVenture
+  productName: AudVenture
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -118,7 +118,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.2
+  bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -257,14 +257,14 @@ PlayerSettings:
   m_AndroidBanners:
   - width: 320
     height: 180
-    banner: {fileID: 2800000, guid: 37a4fd29f2fad4fc8a73814fd2303ac0, type: 3}
+    banner: {fileID: 2800000, guid: 46c2aa329ef504c839e1da9de99d9bf6, type: 3}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 6a502e78ed2444499a7e2db25590053b, type: 3}
+      m_Icon: {fileID: 2800000, guid: 46c2aa329ef504c839e1da9de99d9bf6, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -309,38 +309,6 @@ PlayerSettings:
       m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: 37a4fd29f2fad4fc8a73814fd2303ac0, type: 3}
-      - {fileID: 2800000, guid: 37a4fd29f2fad4fc8a73814fd2303ac0, type: 3}
-      m_Width: 432
-      m_Height: 432
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 324
-      m_Height: 324
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 216
-      m_Height: 216
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 162
-      m_Height: 162
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 108
-      m_Height: 108
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 81
-      m_Height: 81
-      m_Kind: 2
-      m_SubKind: 
-    - m_Textures:
-      - {fileID: 2800000, guid: 37a4fd29f2fad4fc8a73814fd2303ac0, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 1
@@ -374,6 +342,38 @@ PlayerSettings:
       m_Width: 36
       m_Height: 36
       m_Kind: 1
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      - {fileID: 2800000, guid: 46c2aa329ef504c839e1da9de99d9bf6, type: 3}
+      m_Width: 432
+      m_Height: 432
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 324
+      m_Height: 324
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 216
+      m_Height: 216
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 162
+      m_Height: 162
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 108
+      m_Height: 108
+      m_Kind: 2
+      m_SubKind: 
+    - m_Textures: []
+      m_Width: 81
+      m_Height: 81
+      m_Kind: 2
       m_SubKind: 
   - m_BuildTarget: iPhone
     m_Icons:
@@ -448,31 +448,31 @@ PlayerSettings:
       m_Kind: 4
       m_SubKind: App Store
     - m_Textures:
-      - {fileID: 2800000, guid: 39d08d57c38954638a7264fb0958c59d, type: 3}
+      - {fileID: 2800000, guid: 46c2aa329ef504c839e1da9de99d9bf6, type: 3}
       m_Width: 180
       m_Height: 180
       m_Kind: 0
       m_SubKind: iPhone
     - m_Textures:
-      - {fileID: 2800000, guid: dd9d33bcf0e10452499b62e728354c85, type: 3}
+      - {fileID: 2800000, guid: 46c2aa329ef504c839e1da9de99d9bf6, type: 3}
       m_Width: 120
       m_Height: 120
       m_Kind: 0
       m_SubKind: iPhone
     - m_Textures:
-      - {fileID: 2800000, guid: 14dff34bf118549798b5d22ac0b258e3, type: 3}
+      - {fileID: 2800000, guid: 46c2aa329ef504c839e1da9de99d9bf6, type: 3}
       m_Width: 167
       m_Height: 167
       m_Kind: 0
       m_SubKind: iPad
     - m_Textures:
-      - {fileID: 2800000, guid: dd9d33bcf0e10452499b62e728354c85, type: 3}
+      - {fileID: 2800000, guid: 46c2aa329ef504c839e1da9de99d9bf6, type: 3}
       m_Width: 152
       m_Height: 152
       m_Kind: 0
       m_SubKind: iPad
     - m_Textures:
-      - {fileID: 2800000, guid: 55e5a45bca3a64c7689fba21ebd9dc70, type: 3}
+      - {fileID: 2800000, guid: 46c2aa329ef504c839e1da9de99d9bf6, type: 3}
       m_Width: 76
       m_Height: 76
       m_Kind: 0

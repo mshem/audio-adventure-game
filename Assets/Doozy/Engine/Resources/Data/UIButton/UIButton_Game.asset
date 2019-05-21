@@ -29,3 +29,6 @@ MonoBehaviour:
   - Hide Controls
   - Show Controls
   - Replay
+  - Load
+  - StoryTile
+  - Resume
