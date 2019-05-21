@@ -734,3 +734,17 @@
 /Users/yuenwingkam/Documents/Git/audio-adventure-game/Temp/bin/Debug/Unity.PackageManagerUI.Editor.dll
 /Users/yuenwingkam/Documents/Git/audio-adventure-game/Temp/bin/Debug/Unity.TextMeshPro.dll
 /Users/yuenwingkam/Documents/Git/audio-adventure-game/Temp/bin/Debug/Unity.TextMeshPro.Editor.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Cradle.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DDebug.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTween.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Newtonsoft.Json.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.Analytics.DataPrivacy.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.Analytics.Editor.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.Analytics.StandardEvents.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.Analytics.Tracker.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.CollabProxy.Editor.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.PackageManagerUI.Editor.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.TextMeshPro.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/Unity.TextMeshPro.Editor.dll
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTween.dll.mdb
+/Users/michaelshemesh/Documents/audio-adventure-game/Temp/bin/Debug/DOTween.xml

@@ -59,7 +59,7 @@ MonoBehaviour:
     SelectedNodes: []
     DeletedNodes: []
   CurrentView: 1
-  CurrentPanOffset: {x: 470.17075, y: 195.17358}
+  CurrentPanOffset: {x: 457.45, y: 217.35556}
   DefaultPanOffset: {x: 0, y: 0}
   CloseNodyWithAltX: 1
   IsDirty: 0

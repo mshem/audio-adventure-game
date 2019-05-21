@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         var boseWearableGameObject = FindObjectOfType<WearableConnectUIPanel>();
         var boseWearable = boseWearableGameObject.GetComponent<WearableConnectUIPanel>();
         boseWearable.DeviceConnectSuccess += this.OnDeviceConnected;
@@ -145,6 +146,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("waiting for player");
                 //Matcher.SetRelativeReference();
                 leftright.rotation = player.rotation;
+
                 Matcher.SetRelativeReference(Control.LastSensorFrame.rotation);
                 inputController.playerResponseState.Where(e =>
                 {

@@ -87,11 +87,11 @@ namespace Bose.Wearable
 			// intermediate frames and just grab the most recent.
 			SensorFrame frame = _wearableControl.LastSensorFrame;
             Quaternion rotation = frame.rotation;
-            if (gameObject.name == "Player")
-            {
-                rotation.x = 0;
-                rotation.z = 0;
-            }
+            //if (gameObject.name == "DirectionMatcher")
+            //{
+            //    rotation.x = 0;
+            //    rotation.z = 0;
+            //}
 			if (_mode == RotationReference.Absolute)
 			{
 				// In absolute mode, match the rotation exactly.
